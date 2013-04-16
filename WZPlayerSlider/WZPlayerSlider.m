@@ -92,6 +92,8 @@
 - (void)updateAvailableTrackView
 {
     float progress = (_duration > 0) ? _availableDuration / _duration : 0.0f;
+    if (progress < 0.0) progress = 0.0;
+    else if (progress > 1.0) progress = 1.0;
     CGRect availableTrackRect = CGRectMake(_trackRect.origin.x,
                                            _trackRect.origin.y,
                                            _trackRect.size.width * progress,
