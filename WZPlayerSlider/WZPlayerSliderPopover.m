@@ -1,6 +1,6 @@
 //
 //  WZPlayerSliderPopover.m
-//  WZPlayerSilder
+//  WZPlayerSlider
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
