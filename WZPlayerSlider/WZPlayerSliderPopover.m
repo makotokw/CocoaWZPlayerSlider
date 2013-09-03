@@ -12,15 +12,29 @@
 @synthesize textLabel = _textLabel;
 @synthesize thumbnailView = _thumbnailView;
 
+static UIColor *cloudsColor, *wetAsphaltColor, *midnightBlueColor;
+
++ (void)initialize
+{
+    cloudsColor = [UIColor colorWithRed:0.9254901960784314 green:0.9411764705882353 blue:0.9450980392156862 alpha:1.0];
+    wetAsphaltColor = [UIColor colorWithRed:0.20392156862745098 green:0.28627450980392155 blue:0.3686274509803922 alpha:1.0];
+    midnightBlueColor = [UIColor colorWithRed:0.17254901960784313 green:0.24313725490196078 blue:0.3137254901960784 alpha:1.0];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         _textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         _textLabel.backgroundColor = [UIColor clearColor];
-        _textLabel.textColor = [UIColor whiteColor];
+        _textLabel.textColor = cloudsColor;
         _textLabel.font = [UIFont boldSystemFontOfSize:13];
+        
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
+        _textLabel.textAlignment = NSTextAlignmentCenter;
+#else
         _textLabel.textAlignment = UITextAlignmentCenter;
+#endif
         _textLabel.adjustsFontSizeToFitWidth = YES;
         self.opaque = NO;
         [self addSubview:_textLabel];
@@ -48,9 +62,9 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     //// Color Declarations
-    UIColor* gradientColor = [UIColor colorWithRed: 0.267 green: 0.303 blue: 0.335 alpha: 1];
-    UIColor* gradientColor2 = [UIColor colorWithRed: 0.04 green: 0.04 blue: 0.04 alpha: 1];
-    UIColor* shadowColor2 = [UIColor colorWithRed: 0.524 green: 0.553 blue: 0.581 alpha: 0.3];
+    UIColor* gradientColor = midnightBlueColor;
+    UIColor* gradientColor2 = midnightBlueColor;
+    UIColor* shadowColor2 = midnightBlueColor;
     
     //// Gradient Declarations
     NSArray* gradientColors = [NSArray arrayWithObjects:
@@ -69,8 +83,7 @@
     
     //// Subframes
     CGRect frame2 = CGRectMake(CGRectGetMinX(frame) + floor((CGRectGetWidth(frame) - 11) * 0.51724 + 0.5), CGRectGetMinY(frame) + CGRectGetHeight(frame) - 9, 11, 9);
-    
-    
+        
     //// Bezier Drawing
     UIBezierPath* bezierPath = [UIBezierPath bezierPath];
     [bezierPath moveToPoint: CGPointMake(CGRectGetMaxX(frame) - 0.5, CGRectGetMinY(frame) + 4.5)];
@@ -121,10 +134,9 @@
     }
     CGContextRestoreGState(context);
     
-    [[UIColor blackColor] setStroke];
+    [wetAsphaltColor setStroke];
     bezierPath.lineWidth = 1;
-    [bezierPath stroke];
-    
+    [bezierPath stroke];    
     
     //// Cleanup
     CGGradientRelease(gradient);

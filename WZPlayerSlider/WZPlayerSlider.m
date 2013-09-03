@@ -13,6 +13,7 @@
 {
     NSTimeInterval _availableDuration;
     UIImageView *_availableTrack;
+    BOOL _availableTrackAdded;
     CGRect _trackRect;
 }
 
@@ -43,10 +44,26 @@
     [self addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
     
     UIImageView *availableTrack = [[UIImageView alloc] initWithImage:nil];
-    [self addSubview:availableTrack];
     _availableTrack = availableTrack;
     
     [self loadSliderResources];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    if (!_availableTrackAdded) {
+        for (UIView *view in self.subviews) {
+            if ([view isKindOfClass:[UIImageView class]]) {
+                UIImageView *imageView = (UIImageView *)view;
+                if (imageView.image == self.maximumValueImage) {
+                    [self insertSubview:_availableTrack aboveSubview:view];
+                    _availableTrackAdded = YES;
+                    break;
+                }
+            }
+        }
+    }
 }
 
 - (void)loadSliderResources
