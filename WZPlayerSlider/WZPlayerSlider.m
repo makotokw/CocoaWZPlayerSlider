@@ -12,7 +12,10 @@
 
 {
     NSTimeInterval _availableDuration;
+    UIView *_maximumTrackView;
     UIImageView *_availableTrack;
+    UIImage *_maximumTrackImage;
+    UIImage *_minmumTrackImage;
     BOOL _availableTrackAdded;
     CGRect _trackRect;
 }
@@ -49,20 +52,33 @@
     [self loadSliderResources];
 }
 
+- (UIView *)findMaxinumTrackView:(UIView *)containerView
+{
+    for (UIView *view in containerView.subviews) {
+        if ([view isMemberOfClass:[UIView class]]) {
+            UIView *trackView = [self findMaxinumTrackView:view];
+            if (trackView) {
+                return view; // return parent
+            }
+            continue;
+        }
+        if ([view isKindOfClass:[UIImageView class]]) {
+            UIImageView *imageView = (UIImageView *)view;
+            if (imageView.image == _maximumTrackImage) {
+                return view;
+            }
+        }
+    }
+    return nil;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
     if (!_availableTrackAdded) {
-        for (UIView *view in self.subviews) {
-            if ([view isKindOfClass:[UIImageView class]]) {
-                UIImageView *imageView = (UIImageView *)view;
-                if (imageView.image == self.maximumValueImage) {
-                    [self insertSubview:_availableTrack aboveSubview:view];
-                    _availableTrackAdded = YES;
-                    break;
-                }
-            }
-        }
+        UIView *trackView = [self findMaxinumTrackView:self];
+        [self insertSubview:_availableTrack aboveSubview:trackView];
     }
 }
 
@@ -70,12 +86,12 @@
 {
     UIImage *thumbImage = [UIImage imageNamed:@"WZPlayerSliderResources.bundle/thumbImage"];
     [self setThumbImage:thumbImage forState:UIControlStateNormal];
-                                  
-    UIImage *minimumTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/minimumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
-    UIImage *maximumTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/maximumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
-    [self setMinimumTrackImage:minimumTrackImage forState:UIControlStateNormal];
-    [self setMaximumTrackImage:maximumTrackImage forState:UIControlStateNormal];
     
+    _minmumTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/minimumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
+    _maximumTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/maximumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
+    [self setMinimumTrackImage:_minmumTrackImage forState:UIControlStateNormal];
+    [self setMaximumTrackImage:_maximumTrackImage forState:UIControlStateNormal];
+
     UIImage *availableTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/availableTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
     [self setAvailableTrackImage:availableTrackImage];
 }
