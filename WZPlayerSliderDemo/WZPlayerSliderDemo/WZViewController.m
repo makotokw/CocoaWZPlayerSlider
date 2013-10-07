@@ -27,7 +27,7 @@
     _playerSlider2.availableDuration = 6000.0f;
     _playerSlider2.popoverEnabled = YES;
     
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor blackColor];
 
     dispatch_async(dispatch_queue_create("com.makotokw.ios.WZPlayerSliderDemo", NULL), ^{
         while (true) {
