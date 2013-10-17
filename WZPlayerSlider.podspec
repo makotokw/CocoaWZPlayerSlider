@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.platform = :ios, '5.0'
 
   s.requires_arc  = true
-  s.source_files  = 'WZPlayerSlider/*.{h,m}'
-  s.resources     = 'WZPlayerSlider/WZPlayerSliderResources.bundle'
+  s.source_files  = 'Classes/*.{h,m}'
+  s.resources     = 'Resources/WZPlayerSliderResources.bundle'
 end

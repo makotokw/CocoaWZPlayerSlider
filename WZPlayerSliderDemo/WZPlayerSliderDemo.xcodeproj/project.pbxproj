@@ -18,9 +18,9 @@
 		8F4ACA9B170D58BC00CA9F48 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4ACA9A170D58BC00CA9F48 /* Default-568h@2x.png */; };
 		8F4ACA9E170D58BC00CA9F48 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F4ACA9C170D58BC00CA9F48 /* MainStoryboard_iPhone.storyboard */; };
 		8F4ACAA4170D58BC00CA9F48 /* WZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4ACAA3170D58BC00CA9F48 /* WZViewController.m */; };
-		8F9653F61714065D00B2BAB3 /* WZPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9653F21714065D00B2BAB3 /* WZPlayerSlider.m */; };
-		8F9653F71714065D00B2BAB3 /* WZPlayerSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F9653F41714065D00B2BAB3 /* WZPlayerSliderPopover.m */; };
-		8F9653F81714065D00B2BAB3 /* WZPlayerSliderResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F9653F51714065D00B2BAB3 /* WZPlayerSliderResources.bundle */; };
+		8FE2C3E9181042FC00A76984 /* WZPlayerSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2C3E5181042FC00A76984 /* WZPlayerSlider.m */; };
+		8FE2C3EA181042FC00A76984 /* WZPlayerSliderPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE2C3E6181042FC00A76984 /* WZPlayerSliderPopover.m */; };
+		8FE2C3EC1810430A00A76984 /* WZPlayerSliderResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FE2C3EB1810430A00A76984 /* WZPlayerSliderResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,11 +40,11 @@
 		8F4ACA9D170D58BC00CA9F48 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		8F4ACAA2170D58BC00CA9F48 /* WZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WZViewController.h; sourceTree = "<group>"; };
 		8F4ACAA3170D58BC00CA9F48 /* WZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WZViewController.m; sourceTree = "<group>"; };
-		8F9653F11714065D00B2BAB3 /* WZPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPlayerSlider.h; path = ../WZPlayerSlider/WZPlayerSlider.h; sourceTree = "<group>"; };
-		8F9653F21714065D00B2BAB3 /* WZPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPlayerSlider.m; path = ../WZPlayerSlider/WZPlayerSlider.m; sourceTree = "<group>"; };
-		8F9653F31714065D00B2BAB3 /* WZPlayerSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPlayerSliderPopover.h; path = ../WZPlayerSlider/WZPlayerSliderPopover.h; sourceTree = "<group>"; };
-		8F9653F41714065D00B2BAB3 /* WZPlayerSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPlayerSliderPopover.m; path = ../WZPlayerSlider/WZPlayerSliderPopover.m; sourceTree = "<group>"; };
-		8F9653F51714065D00B2BAB3 /* WZPlayerSliderResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WZPlayerSliderResources.bundle; path = ../WZPlayerSlider/WZPlayerSliderResources.bundle; sourceTree = "<group>"; };
+		8FE2C3E5181042FC00A76984 /* WZPlayerSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPlayerSlider.m; path = ../Classes/WZPlayerSlider.m; sourceTree = "<group>"; };
+		8FE2C3E6181042FC00A76984 /* WZPlayerSliderPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPlayerSliderPopover.m; path = ../Classes/WZPlayerSliderPopover.m; sourceTree = "<group>"; };
+		8FE2C3E7181042FC00A76984 /* WZPlayerSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPlayerSlider.h; path = ../Classes/WZPlayerSlider.h; sourceTree = "<group>"; };
+		8FE2C3E8181042FC00A76984 /* WZPlayerSliderPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPlayerSliderPopover.h; path = ../Classes/WZPlayerSliderPopover.h; sourceTree = "<group>"; };
+		8FE2C3EB1810430A00A76984 /* WZPlayerSliderResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = WZPlayerSliderResources.bundle; path = ../Resources/WZPlayerSliderResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,6 @@
 				8F4ACAA3170D58BC00CA9F48 /* WZViewController.m */,
 				8F4ACA8B170D58BC00CA9F48 /* Supporting Files */,
 			);
-			name = WZPlayerSliderDemo;
 			path = WZPlayerSliderDemo;
 			sourceTree = "<group>";
 		};
@@ -120,11 +119,11 @@
 		8F9653F01714064700B2BAB3 /* WZPlayerSlider */ = {
 			isa = PBXGroup;
 			children = (
-				8F9653F11714065D00B2BAB3 /* WZPlayerSlider.h */,
-				8F9653F21714065D00B2BAB3 /* WZPlayerSlider.m */,
-				8F9653F31714065D00B2BAB3 /* WZPlayerSliderPopover.h */,
-				8F9653F41714065D00B2BAB3 /* WZPlayerSliderPopover.m */,
-				8F9653F51714065D00B2BAB3 /* WZPlayerSliderResources.bundle */,
+				8FE2C3EB1810430A00A76984 /* WZPlayerSliderResources.bundle */,
+				8FE2C3E5181042FC00A76984 /* WZPlayerSlider.m */,
+				8FE2C3E6181042FC00A76984 /* WZPlayerSliderPopover.m */,
+				8FE2C3E7181042FC00A76984 /* WZPlayerSlider.h */,
+				8FE2C3E8181042FC00A76984 /* WZPlayerSliderPopover.h */,
 			);
 			name = WZPlayerSlider;
 			sourceTree = "<group>";
@@ -185,8 +184,8 @@
 				8F4ACA97170D58BC00CA9F48 /* Default.png in Resources */,
 				8F4ACA99170D58BC00CA9F48 /* Default@2x.png in Resources */,
 				8F4ACA9B170D58BC00CA9F48 /* Default-568h@2x.png in Resources */,
+				8FE2C3EC1810430A00A76984 /* WZPlayerSliderResources.bundle in Resources */,
 				8F4ACA9E170D58BC00CA9F48 /* MainStoryboard_iPhone.storyboard in Resources */,
-				8F9653F81714065D00B2BAB3 /* WZPlayerSliderResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,11 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE2C3EA181042FC00A76984 /* WZPlayerSliderPopover.m in Sources */,
+				8FE2C3E9181042FC00A76984 /* WZPlayerSlider.m in Sources */,
 				8F4ACA91170D58BC00CA9F48 /* main.m in Sources */,
 				8F4ACA95170D58BC00CA9F48 /* WZAppDelegate.m in Sources */,
 				8F4ACAA4170D58BC00CA9F48 /* WZViewController.m in Sources */,
-				8F9653F61714065D00B2BAB3 /* WZPlayerSlider.m in Sources */,
-				8F9653F71714065D00B2BAB3 /* WZPlayerSliderPopover.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
