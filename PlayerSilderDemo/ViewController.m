@@ -1,26 +1,28 @@
 //
-//  WZViewController.m
-//  WZPlayerSliderDemo
+//  ViewController.m
+//  PlayerSilderDemo
 //
-//  Copyright (c) 2013 makoto_kw. All rights reserved.
+//  Copyright (c) 2014 makoto_kw. All rights reserved.
 //
 
-#import "WZViewController.h"
-#import "WZPlayerSlider.h"
+#import "ViewController.h"
+#import "WZYPlayerSlider.h"
 
-@interface WZViewController ()
+@interface ViewController ()
 
 @end
 
-@implementation WZViewController
+@implementation ViewController
 
-@synthesize playerSlider1 = _playerSlider1;
-@synthesize playerSlider2 = _playerSlider2;
+{
+    IBOutlet WZYPlayerSlider *_playerSlider1;
+    IBOutlet WZYPlayerSlider *_playerSlider2;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     _playerSlider1.duration = 60.0f;
     _playerSlider1.availableDuration = 30.0f;
     _playerSlider2.duration = 6000.0f;
@@ -28,14 +30,14 @@
     _playerSlider2.popoverEnabled = YES;
     
     self.view.backgroundColor = [UIColor blackColor];
-
-    dispatch_async(dispatch_queue_create("com.makotokw.ios.WZPlayerSliderDemo", NULL), ^{
+    
+    dispatch_async(dispatch_queue_create("com.makotokw.ios.PlayerSilderDemo", NULL), ^{
         while (true) {
             dispatch_async(dispatch_get_main_queue(), ^{
-               _playerSlider1.availableDuration += 1.0f;
-               if (_playerSlider1.duration < _playerSlider1.availableDuration) {
-                   _playerSlider1.availableDuration = 0.0;
-               }
+                _playerSlider1.availableDuration += 1.0f;
+                if (_playerSlider1.duration < _playerSlider1.availableDuration) {
+                    _playerSlider1.availableDuration = 0.0;
+                }
             });
             sleep(1);
         }
@@ -46,6 +48,7 @@
 {
     [super didReceiveMemoryWarning];
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

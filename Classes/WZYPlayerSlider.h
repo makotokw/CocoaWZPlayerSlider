@@ -1,18 +1,18 @@
 //
-//  WZPlayerSlider.h
-//  WZPlayerSlider
+//  WZYPlayerSlider.h
+//  WZYPlayerSlider
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class WZPlayerSliderPopover;
+@class WZYPlayerSliderPopover;
 
-@interface WZPlayerSlider : UISlider
+@interface WZYPlayerSlider : UISlider
 
 @property(nonatomic,getter=isPopoverEnabled) BOOL popoverEnabled;
-@property(nonatomic) WZPlayerSliderPopover *popover;
+@property(nonatomic) WZYPlayerSliderPopover *popover;
 @property(nonatomic,assign) NSTimeInterval popoverAnimationDuration;
 
 @property(nonatomic,assign) NSTimeInterval duration;

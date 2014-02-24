@@ -1,13 +1,13 @@
 //
-//  WZPlayerSliderPopover.m
-//  WZPlayerSlider
+//  WZYPlayerSliderPopover.m
+//  WZYPlayerSlider
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
-#import "WZPlayerSliderPopover.h"
+#import "WZYPlayerSliderPopover.h"
 
-@implementation WZPlayerSliderPopover
+@implementation WZYPlayerSliderPopover
 
 @synthesize textLabel = _textLabel;
 @synthesize thumbnailView = _thumbnailView;

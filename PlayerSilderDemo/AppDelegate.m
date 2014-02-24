@@ -1,13 +1,13 @@
 //
-//  WZAppDelegate.m
-//  WZPlayerSliderDemo
+//  AppDelegate.m
+//  PlayerSilderDemo
 //
-//  Copyright (c) 2013 makoto_kw. All rights reserved.
+//  Copyright (c) 2014 makoto_kw. All rights reserved.
 //
 
-#import "WZAppDelegate.h"
+#import "AppDelegate.h"
 
-@implementation WZAppDelegate
+@implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

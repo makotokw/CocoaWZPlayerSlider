@@ -1,14 +1,14 @@
 //
-//  WZPlayerSlider.m
-//  WZPlayerSlider
+//  WZYPlayerSlider.m
+//  WZYPlayerSlider
 //
 //  Copyright (c) 2013 makoto_kw. All rights reserved.
 //
 
-#import "WZPlayerSlider.h"
-#import "WZPlayerSliderPopover.h"
+#import "WZYPlayerSlider.h"
+#import "WZYPlayerSliderPopover.h"
 
-@implementation WZPlayerSlider
+@implementation WZYPlayerSlider
 
 {
     NSTimeInterval _availableDuration;
@@ -36,7 +36,7 @@
 
 - (void)awakeFromNib
 {
-    _popover = [[WZPlayerSliderPopover alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y - 32, 60, 32)];
+    _popover = [[WZYPlayerSliderPopover alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y - 32, 60, 32)];
     _popover.alpha = 0;
     _popoverAnimationDuration = 0.25f;
     
@@ -84,15 +84,15 @@
 
 - (void)loadSliderResources
 {
-    UIImage *thumbImage = [UIImage imageNamed:@"WZPlayerSliderResources.bundle/thumbImage"];
+    UIImage *thumbImage = [UIImage imageNamed:@"WZYPlayerSliderResources.bundle/thumbImage"];
     [self setThumbImage:thumbImage forState:UIControlStateNormal];
     
-    _minmumTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/minimumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
-    _maximumTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/maximumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
+    _minmumTrackImage = [[UIImage imageNamed:@"WZYPlayerSliderResources.bundle/minimumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
+    _maximumTrackImage = [[UIImage imageNamed:@"WZYPlayerSliderResources.bundle/maximumTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 3, 1, 1)];
     [self setMinimumTrackImage:_minmumTrackImage forState:UIControlStateNormal];
     [self setMaximumTrackImage:_maximumTrackImage forState:UIControlStateNormal];
 
-    UIImage *availableTrackImage = [[UIImage imageNamed:@"WZPlayerSliderResources.bundle/availableTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
+    UIImage *availableTrackImage = [[UIImage imageNamed:@"WZYPlayerSliderResources.bundle/availableTrackImage.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1, 1, 1, 1)];
     [self setAvailableTrackImage:availableTrackImage];
 }
 
@@ -261,7 +261,7 @@
 
 - (void)updatePopoverPlayTime
 {
-    _popover.textLabel.text = [WZPlayerSlider formatPlayTimeFromInterval:_duration * self.value];
+    _popover.textLabel.text = [WZYPlayerSlider formatPlayTimeFromInterval:_duration * self.value];
 }
 
 - (void)showPopoverAnimated:(BOOL)animated
